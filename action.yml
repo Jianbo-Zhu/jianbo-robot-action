@@ -1,0 +1,45 @@
+name: 'Railflow Robot Action'
+description: 'Run Robot Framework tests and upload reports to TestRail via Railflow Cli'
+inputs:
+  robot_tests_dir:
+    description: 'Directory where Robot tests are located in the repository'
+    required: false
+    default: './'
+  railflow_key:
+    description: 'License key. Can be set with RAILFLOW_LICENSE environment variable'
+    required: true
+    default: ''
+  railflow_username:
+    description: 'TestRail username. Can be set with RAILFLOW_TR_USER environment variable'
+    required: true
+    default: ''
+  railflow_password:
+    description: 'TestRail password or API Key. Can be set with RAILFLOW_TR_PASSWORD environment variable'
+    required: true
+    defau lt: ''
+  testrail_url:
+    description: 'TestRail instance URL'
+    required: true
+    default: ''
+  testrail_project:
+    description: 'TestRail project name'
+    required: true
+    default: ''
+  testrail_test_plan:
+    description: 'TestRail project name'
+    required: true
+    default: ''
+
+runs:
+  using: 'composite'
+  steps:
+    - shell: bash
+      run: ${{ github.action_path }}/doAction.sh
+      env:
+        ROBOT_TESTS_DIR: ${{ inputs.robot_tests_dir }}
+        RAILFLOW_KEY: ${{ inputs.railflow_key }}
+        RAILFLOW_USERNAME: ${{ inputs.railflow_username }}
+        RAILFLOW_PASSWORD: ${{ inputs.railflow_password }}
+        TESTRAIL_URL: ${{ inputs.testrail_url }}
+        TESTRAIL_PROJECT: ${{ inputs.testrail_project }}
+        TESTRAIL_TEST_PLAN: ${{ inputs.testrail_test_plan }}

@@ -7,7 +7,7 @@ This action will run the tests with Robot framework and export the results to Te
 <!-- start usage -->
 ```yaml
 - name: Run Tests and Export Results
-  uses: Jianbo-Zhu/jianbo-robot-action@v0.0.3
+  uses: Jianbo-Zhu/jianbo-robot-action@v0.0.4
   with:
     # Directory where Robot tests are located in the repository, NOTE: No '/' at the end
     # Default: .

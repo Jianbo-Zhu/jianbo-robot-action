@@ -4,7 +4,7 @@ inputs:
   robot_tests_dir:
     description: 'Directory where Robot tests are located in the repository'
     required: false
-    default: './'
+    default: '.'
   railflow_key:
     description: 'License key. Can be set with RAILFLOW_LICENSE environment variable'
     required: true
@@ -26,7 +26,7 @@ inputs:
     required: true
     default: ''
   testrail_test_plan:
-    description: 'TestRail project name'
+    description: 'TestRail test plan'
     required: true
     default: ''
 

@@ -9,11 +9,11 @@ inputs:
     description: 'License key. Can be set with RAILFLOW_LICENSE environment variable'
     required: true
     default: ''
-  railflow_username:
+  testrail_username:
     description: 'TestRail username. Can be set with RAILFLOW_TR_USER environment variable'
     required: true
     default: ''
-  railflow_password:
+  testrail_password:
     description: 'TestRail password or API Key. Can be set with RAILFLOW_TR_PASSWORD environment variable'
     required: true
     defau lt: ''
@@ -38,8 +38,8 @@ runs:
       env:
         ROBOT_TESTS_DIR: ${{ inputs.robot_tests_dir }}
         RAILFLOW_KEY: ${{ inputs.railflow_key }}
-        RAILFLOW_USERNAME: ${{ inputs.railflow_username }}
-        RAILFLOW_PASSWORD: ${{ inputs.railflow_password }}
+        TESTRAIL_USERNAME: ${{ inputs.testrail_username }}
+        TESTRAIL_PASSWORD: ${{ inputs.testrail_password }}
         TESTRAIL_URL: ${{ inputs.testrail_url }}
         TESTRAIL_PROJECT: ${{ inputs.testrail_project }}
         TESTRAIL_TEST_PLAN: ${{ inputs.testrail_test_plan }}
